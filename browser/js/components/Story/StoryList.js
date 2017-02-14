@@ -105,6 +105,7 @@ class StoryList extends React.Component {
 
   filterStory(story) {
     // this is necessary as a user can be deleted and his stories are orphaned
+    //console.log(story, story.author);
     const author_name = (story && story.author) ? story.author.name : '';
     const titleMatch = new RegExp(this.state.title, 'i');
     const nameMatch = new RegExp(this.state.name, 'i');

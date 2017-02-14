@@ -60,7 +60,8 @@ class Login extends React.Component {
   onLoginSubmit(event) {
     const { message } = this.props;
     event.preventDefault();
-    console.log(`${message} isn't implemented yet`);
+    //console.log(`${message} isn't implemented yet`);
+
   }
 }
 

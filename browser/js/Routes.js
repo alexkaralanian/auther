@@ -33,16 +33,22 @@ const Routes = ({ fetchInitialData, onStoryEnter }) => (
 
 const mapProps = null;
 
-const mapDispatch = dispatch => ({
-  fetchInitialData: () => {
-    dispatch(fetchUsers());
-    dispatch(fetchStories());
-    // what other data might we want to fetch on app load?
-  },
-  onStoryEnter: (nextRouterState) => {
-    const storyId = nextRouterState.params.id;
-    dispatch(fetchStory(storyId));
-  }
-});
+const mapDispatch = dispatch => {
+  //console.log('initialfetch')
+  return ({
+
+    fetchInitialData: () => {
+      console.log('fetchInitialData')
+      dispatch(fetchUsers());
+      dispatch(fetchStories());
+      // what other data might we want to fetch on app load?
+    },
+    onStoryEnter: (nextRouterState) => {
+      console.log('onStoryEnter')
+      const storyId = nextRouterState.params.id;
+      dispatch(fetchStory(storyId));
+    }
+  })
+};
 
 export default connect(mapProps, mapDispatch)(Routes);
